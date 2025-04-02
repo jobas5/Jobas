@@ -1,0 +1,29 @@
+---
+import { getCollection } from "astro:content";
+import PageLayout from "@layouts/PageLayout.astro";
+import TopLayout from "@layouts/TopLayout.astro";
+import BottomLayout from "@layouts/BottomLayout.astro";
+import Books from "@components/Books";
+import { BOOKS } from "@consts";
+
+const books = (await getCollection("books"))
+  .filter((book) => !book.data.draft)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const tags = [...new Set(books.flatMap((post) => post.data.tags))].sort(
+  (a, b) => a.localeCompare(b),
+);
+---
+
+<PageLayout title={BOOKS.TITLE} description={BOOKS.DESCRIPTION}>
+  <TopLayout>
+    <div class="animate page-heading">
+      {BOOKS.TITLE}
+    </div>
+  </TopLayout>
+  <BottomLayout>
+    <div class="animate">
+      <Books client:load tags={tags} data={books} />
+    </div>
+  </BottomLayout>
+</PageLayout>
