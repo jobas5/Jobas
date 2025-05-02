@@ -150,51 +150,46 @@ declare module 'astro:content' {
 	>;
 
 	type ContentEntryMap = {
-		"blog": Record<string, {
-  id: string;
-  slug: string;
+		"blog": {
+"01-Looking-Back-My-2024-Retrospective/My 2024 Retrospective.mdx": {
+	id: "01-Looking-Back-My-2024-Retrospective/My 2024 Retrospective.mdx";
+  slug: "01-looking-back-my-2024-retrospective/my-2024-retrospective";
   body: string;
   collection: "blog";
-  data: InferEntrySchema<"blog">;
-  render(): Render[".md"];
-}>;
-"books": Record<string, {
-  id: string;
-  slug: string;
-  body: string;
-  collection: "books";
-  data: InferEntrySchema<"books">;
-  render(): Render[".md"];
-}>;
+  data: any
+} & { render(): Render[".mdx"] };
+};
 "legal": {
 "privacy.md": {
 	id: "privacy.md";
   slug: "privacy";
   body: string;
   collection: "legal";
-  data: InferEntrySchema<"legal">
+  data: any
 } & { render(): Render[".md"] };
 "terms.md": {
 	id: "terms.md";
   slug: "terms";
   body: string;
   collection: "legal";
-  data: InferEntrySchema<"legal">
+  data: any
 } & { render(): Render[".md"] };
 };
-"projects": Record<string, {
-  id: string;
-  slug: string;
-  body: string;
-  collection: "projects";
-  data: InferEntrySchema<"projects">;
-  render(): Render[".md"];
-}>;
 
 	};
 
 	type DataEntryMap = {
-		"work": Record<string, {
+		"books": Record<string, {
+  id: string;
+  collection: "books";
+  data: any;
+}>;
+"projects": Record<string, {
+  id: string;
+  collection: "projects";
+  data: any;
+}>;
+"work": Record<string, {
   id: string;
   collection: "work";
   data: any;
@@ -204,5 +199,5 @@ declare module 'astro:content' {
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	export type ContentConfig = typeof import("./../../src/content/config.js");
+	export type ContentConfig = never;
 }
