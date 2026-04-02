@@ -9,7 +9,7 @@ export default defineConfig({
   site: "https://jobas.pages.dev",
   integrations: [
     mdx(),
-    sitemap(),
+    // sitemap(),
     solidJs(),
     tailwind({ applyBaseStyles: false }),
   ],
