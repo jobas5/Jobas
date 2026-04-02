@@ -158,6 +158,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".mdx"] };
+"02-2025-Retrospective-and-what-I-felt-at-Q1-2026/2025 Retrospective and what I felt at Q1 of 2026.mdx": {
+	id: "02-2025-Retrospective-and-what-I-felt-at-Q1-2026/2025 Retrospective and what I felt at Q1 of 2026.mdx";
+  slug: "02-2025-retrospective-and-what-i-felt-at-q1-2026/2025-retrospective-and-what-i-felt-at-q1-of-2026";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".mdx"] };
 };
 "books": {
 "01-Seni-Hidup-Minimalis/Seni Hidup Minimalis.mdx": {
@@ -196,15 +203,10 @@ declare module 'astro:content' {
 	};
 
 	type DataEntryMap = {
-		"work": Record<string, {
-  id: string;
-  collection: "work";
-  data: any;
-}>;
-
+		
 	};
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	export type ContentConfig = typeof import("./../../src/content/config.js");
+	export type ContentConfig = typeof import("../../src/content/config.js");
 }
