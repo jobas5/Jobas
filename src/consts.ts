@@ -5,7 +5,7 @@ export const SITE: Site = {
   TITLE: "Jobas",
   DESCRIPTION: "Welcome to Jobas Personal Website, a portfolio and blog designed and wrote by me.",
   AUTHOR: "Jobas",
-  DOMAIN: "https://jobas.github.io",
+  DOMAIN: "https://jobas.pages.dev",
 }
 
 // Books Page
