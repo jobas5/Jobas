@@ -36,9 +36,10 @@ const projects = defineCollection({
 })
 
 const legal = defineCollection({
+  type: "content",
   schema: z.object({
     title: z.string(),
-    date: z.date(),
+    date: z.coerce.date(),
   }),
 });
 

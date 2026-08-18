@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://astro-sphere-demo.vercel.app/sitemap-index.xml
+Sitemap: https://jobas.pages.dev/sitemap-index.xml

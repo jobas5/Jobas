@@ -8,11 +8,26 @@ import { SITE } from "@consts"
 
 // Create the static pages for legal docs
 export async function getStaticPaths() {
-	const docs = await getCollection("legal")
-	return docs.map((doc) => ({
-		params: { slug: doc.slug },
-		props: doc,
-	}))
+	const docs = await getCollection("legal");
+
+	return docs
+		.filter((doc) => {
+			const valid = doc && doc.slug && doc.data?.title && doc.data?.date;
+
+			if (!valid) {
+				console.error("❌ INVALID LEGAL DOC:", {
+					id: doc?.id,
+					slug: doc?.slug,
+					data: doc?.data,
+				});
+			}
+
+			return valid;
+		})
+		.map((doc) => ({
+			params: { slug: doc.slug! },
+			props: doc,
+		}));
 }
 
 // Get the requested legal doc

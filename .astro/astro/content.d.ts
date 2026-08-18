@@ -176,29 +176,30 @@ declare module 'astro:content' {
 } & { render(): Render[".mdx"] };
 };
 "legal": {
-"privacy.md": {
-	id: "privacy.md";
+"privacy.mdx": {
+	id: "privacy.mdx";
   slug: "privacy";
   body: string;
   collection: "legal";
   data: InferEntrySchema<"legal">
-} & { render(): Render[".md"] };
-"terms.md": {
-	id: "terms.md";
+} & { render(): Render[".mdx"] };
+"terms.mdx": {
+	id: "terms.mdx";
   slug: "terms";
   body: string;
   collection: "legal";
   data: InferEntrySchema<"legal">
-} & { render(): Render[".md"] };
+} & { render(): Render[".mdx"] };
 };
-"projects": Record<string, {
-  id: string;
-  slug: string;
+"projects": {
+"first_project.mdx": {
+	id: "first_project.mdx";
+  slug: "first_project";
   body: string;
   collection: "projects";
-  data: InferEntrySchema<"projects">;
-  render(): Render[".md"];
-}>;
+  data: InferEntrySchema<"projects">
+} & { render(): Render[".mdx"] };
+};
 
 	};
 
