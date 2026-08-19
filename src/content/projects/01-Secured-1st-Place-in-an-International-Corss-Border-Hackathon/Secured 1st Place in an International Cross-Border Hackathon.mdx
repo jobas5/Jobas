@@ -1,0 +1,176 @@
+---
+title: "Secured 1st Place in an International Cross-Border Hackathon"
+summary: "Build in Batam, Showcase to the World: Our Journey at Batam Singapore Hackathon 2026"
+date: 2026-08-19
+tags: ["Milestone", "Building", "Hackathon"]
+draft: false
+---
+
+
+import { Image } from "astro:assets";
+import banner from "./banner.png";
+
+<Image 
+  src={banner} 
+  alt="hackathon galery" 
+  width={800} 
+  height={400} 
+/>
+
+August 15 marked the beginning of the **Batam Singapore Hackathon 2026**, the first international hackathon held in Batam, bringing together participants from the SIJORI region — Singapore, Johor, and the Riau Islands.
+
+The hackathon carried the theme **“Build in Batam, Showcase to the World,”** challenging participants to build and ship their best solution in just **16 hours**.
+
+The Batam Singapore Hackathon 2026 featured three main tracks:
+
+### Digital Infrastructure — Data Centers
+
+- **Talent Bridge:** Closing the Digital Skills Gap for Data Centers & Tech Jobs
+    
+- **Water & Energy Guardian:** Sustainable Data Center Operations
+
+### Ease of Living & Sustainability
+
+- **Smart Mobility Flow:** Tackling Traffic Congestion & Cross-Border Logistics
+    
+- **Green Waste Warrior:** Circular Economy for Urban & Industrial Waste
+    
+- **Smart City Pulse:** Enhancing Digital Public Services
+
+### Tourism Development — Health or Eco
+
+- **Health Tourism Hub:** Seamless Cross-Border Patient & Medical Experiences
+    
+- **Sustainable Tourism Explorer:** Eco-Friendly Visitor Experiences
+
+import team from "./team.png";
+
+<Image 
+  src={team} 
+  alt="me and my teammate" 
+  width={200} 
+  height={100} 
+/>
+
+My teammate, **[Mukhammad Miftakhul As'Adi](https://www.linkedin.com/in/asadii/)**, and I decided to take on one of the relatively new challenges in the hackathon: **Digital Infrastructure — Data Centers**, specifically the **Water & Energy Guardian: Sustainable Data Center Operations** problem statement.
+
+Building a team of only two people was quite a bold decision when other teams were maximizing the five-person limit. But we made that decision intentionally. Since participants were allowed to use any tools, including AI, we believed that a small, highly focused team could still move fast and build something meaningful.
+
+I took the role of the **hacker**, while my teammate became the **hipster**. Together, we built **DCFlex** - a platform designed to help facility engineers keep data centers cool and reliable while minimizing electricity and water consumption through real-time monitoring, scenario simulation, and continuous AI learning.
+
+## The Problem We Wanted to Solve
+
+Data centers constantly face the risk of overheating. If thermal conditions are not properly managed, the consequences can be extremely costly. This makes it critical for facility engineers to ensure that data center temperatures remain within their optimal operating range.
+
+Maintaining those conditions requires an effective cooling system. In data centers, two important resources are commonly involved in cooling: **electricity and water**.
+
+This led us to focus on two critical sustainability metrics:
+
+- **PUE — Power Usage Effectiveness**
+    
+- **WUE — Water Usage Effectiveness** 
+
+Our goal was to optimize these metrics by looking at several supporting variables that directly influence cooling performance, including **IT load, valve position, and pump speed**.
+
+## From Sensors to Simulation to Reality
+
+import dcflex from "./DCFlex.png";
+
+<Image 
+  src={dcflex} 
+  alt="DCFlex" 
+  width={600} 
+  height={400} 
+/>
+
+The core idea behind DCFlex was to create a workflow that allows facility engineers to move from **real-world telemetry to simulation, and finally to real-world implementation**.
+
+The process looks like this:
+
+**Physical Sensors → Real-Time Monitoring → What-If Simulation → Experiment Monitoring → Actual Implementation**
+
+The **What-If Engine** acts as a lightweight digital twin. Instead of immediately applying a new cooling configuration to a real data center, engineers can first simulate the potential outcome and verify whether the proposed configuration makes sense under conditions that resemble the physical environment.
+
+We also introduced a **surrogate model using LightGBM** to improve the reliability of our analysis. Sensor data can contain noise, and noisy input can potentially affect the quality of simulations and predictions. The surrogate model helps us produce cleaner and more reliable predictions before the data is used in the optimization process.
+
+For us, the **digital twin became one of the most important parts of DCFlex**.
+
+Imagine directly applying the result of an analysis to a real data center and discovering that the prediction was wrong. In a data center environment, that failure could translate into significant operational and financial consequences.
+
+That is why we wanted the system to provide a safer experimentation layer before making changes to the physical environment.
+
+We also designed the closed-loop implementation with a physical safety layer. Even when a simulated result is approved for implementation, the physical control system still has the authority to adjust the cooling parameters if it detects conditions indicating that the temperature may exceed a predefined threshold.
+
+## Mentors Who Changed the Direction of Our Product
+
+We could not have developed the solution without the guidance of our mentors.
+
+Neither of us had previously worked directly in the data center industry, so understanding the actual operational challenges was one of our biggest limitations. The feedback from experienced mentors helped us validate our assumptions and rethink how we should build the product.
+
+import jose from "./jose.jpeg";
+
+<Image 
+  src={jose} 
+  alt="jose galarza" 
+  width={400} 
+  height={400} 
+/>
+
+I had a short but meaningful discussion with **[Jose Galarza](https://www.linkedin.com/in/igalarzab/)**. That conversation opened our perspective on how to approach the problem and, more importantly, how to think about building a product rather than simply building a technical prototype.
+
+import krishna from "./krishna.jpeg";
+
+<Image 
+  src={krishna} 
+  alt="krishna prasad" 
+  width={400} 
+  height={400} 
+/>
+
+Our team also received an interesting idea from **[Krishna Prasad](https://www.linkedin.com/in/krishnaprasadacharya/)**:
+
+> What if each data center zone had its own power and water usage budget?
+
+That question led us to another concept: allowing cooling resources to be dynamically reallocated between zones. If one zone has excess cooling capacity while another zone requires more, the system could potentially recommend or facilitate a redistribution of cooling resources.
+
+This was something we had never considered before.
+
+And with only 16 hours remaining, we decided to build it.
+
+## 16 Hours: Ideas Are Free, Execution Is Expensive
+
+There is a saying that **ideas are free, but execution is expensive**.
+
+I think the hackathon proved that point.
+
+With only 16 hours, my teammate and I had to constantly make trade-offs: what should we build, what should we simplify, and what could we leave for future development?
+
+Fortunately, we are living in a time when **agentic AI is becoming increasingly accessible**.
+
+For me, the challenge was no longer simply about writing every line of code manually. It was about understanding the problem, breaking it into smaller pieces, and assembling the right tools and AI agents to solve those pieces effectively.
+
+For this hackathon, I used **Antigravity IDE** together with **OpenCode** in the terminal. I used **DeepSeek V4 Flash** as the planner and **DeepSeek V4 Pro** as the builder. I also integrated the **Ponytail** plugin to improve the development workflow.
+
+For access to additional models, I used **Orvix Platform**, an AI Gateway built by **[Eric Julianto](https://www.linkedin.com/in/eric-julianto/)**.
+
+For deployment, I used **Cloudflare Workers**, together with **Wrangler** and **Cloudflare D1**.
+
+The total estimated cost of the tools I used to build DCFlex within those 16 hours was only around **$10**, primarily for the OpenCode Go subscription.
+
+## And Then We Won
+
+Alhamdulillah, after 16 hours of building, debugging, discussing, simplifying, and shipping, we managed to secure **1st Place**.
+
+Our project was:
+
+# DCFlex — See, Simulate, Decide, Cool Smarter.
+
+Winning was certainly exciting. But beyond the trophy, this experience was special because it reminded me why I enjoy building products.
+
+As someone who once watched the Korean drama _Start-Up_, this hackathon almost felt like experiencing a small version of that world in real life a group of people, a limited amount of time, a big problem, and the pressure to turn an idea into something real.
+
+I am incredibly grateful for the opportunity and for everyone who contributed to the experience.
+
+A special thank you to **[Rajesh](https://www.linkedin.com/in/rajeshhacharya/)** and the entire **Batam Innovation Center** team for initiating and organizing such a meaningful event.
+
+From **Build in Batam** to **Showcase to the World** - this was definitely a journey worth remembering.

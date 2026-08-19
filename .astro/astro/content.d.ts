@@ -192,9 +192,9 @@ declare module 'astro:content' {
 } & { render(): Render[".mdx"] };
 };
 "projects": {
-"first_project.mdx": {
-	id: "first_project.mdx";
-  slug: "first_project";
+"01-Secured-1st-Place-in-an-International-Corss-Border-Hackathon/Secured 1st Place in an International Cross-Border Hackathon.mdx": {
+	id: "01-Secured-1st-Place-in-an-International-Corss-Border-Hackathon/Secured 1st Place in an International Cross-Border Hackathon.mdx";
+  slug: "01-secured-1st-place-in-an-international-corss-border-hackathon/secured-1st-place-in-an-international-cross-border-hackathon";
   body: string;
   collection: "projects";
   data: InferEntrySchema<"projects">
